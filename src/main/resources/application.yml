@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+spring:
+  profiles:
+    active: dev
+
+
+info.app.name: demoQ
+info.app.description: This is a Spring boot demoQ.
+info.app.version: 1.0.0
+
+---
+
+spring:
+  profiles: dev
+  activemq:
+      brokerUrl: tcp://broker-amq-tcp.amq-prueba.svc.cluster.local:61616
+      user: admin
+      password: ipcom123.
+      packages.trust-all: true
+
+fromRoute:  activemq:incomingOrders
